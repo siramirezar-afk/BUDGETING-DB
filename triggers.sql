@@ -13,6 +13,6 @@ END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER trg_before_insert_transaction
-BEFORE INSERT ON transaction
+BEFORE INSERT ON transactions
 FOR EACH ROW
 EXECUTE FUNCTION check_transaction_amount();
