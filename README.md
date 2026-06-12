@@ -1,77 +1,56 @@
-# BUDGETING - Controla tus gastos, libera tu futuro
+# BUDGETING - Control your expenses, free your future
 
-## Descripción
+## Description
 
-El proyecto Budgeting tiene como propósito facilitar al usuario el control de sus finanzas personales mediante una base de datos relacional (PostgreSQL) que permite registrar, visualizar y analizar gastos e ingresos. El sistema ofrece una forma clara y accesible de organizar las transacciones diarias, clasificarlas por categorías, establecer presupuestos y generar reportes periódicos. Para su desarrollo se implementaron conceptos fundamentales de Sistemas de Gestión de Bases de Datos como diseño DDL para entidades (usuarios, transacciones, presupuestos y reportes), restricciones de integridad con llaves primarias y foráneas, optimización mediante índices únicos, consultas DML y triggers.
+The purpose of the Budgeting project is to facilitate the user's control over their personal finances through a relational database (PostgreSQL) that allows registering, visualizing, and analyzing expenses and income. The system offers a clear and accessible way to organize daily transactions, classify them by categories, set budgets, and generate periodic reports. For its development, fundamental concepts of Database Management Systems were implemented, such as DDL design for entities (users, transactions, budgets, and reports), integrity constraints with primary and foreign keys, optimization through unique indexes, DML queries, and triggers.
 
-## Integrantes
+## Team Members
 
 - Luna Sofia Santis Alvarez
 - Silvana Ramírez Ardila
 - Jesus Samuel Avellaneda Perico
 
-## Lenguajes y herramientas
+## Languages and Tools
 
 - SQL (Structured Query Language)
 - PostgreSQL
 
+## System Features
 
-## Funcionalidades del sistema
+- Comprehensive User Management: Registration, storage, and control of unique profiles within the system.
+- Transaction Registration and Classification: Detailed storage of income and expenses linked to personalized categories.
+- Financial Budget Control: Configuration of maximum spending limits per category and user without duplication.
+- Periodic Report Generation: Consolidation of financial histories structured by dates.
+- Automated Data Validation: Server-side restriction (trigger) that prevents the entry of amounts less than or equal to zero.
+- Performance Queries and Analysis: Chronological and optimized extraction of financial history through table joins.
 
-- Gestión Integral de Usuarios: Registro, almacenamiento y control de perfiles únicos en el sistema.
 
-- Registro y Clasificación de Transacciones: Almacenamiento detallado de ingresos y gastos vinculados a categorías personalizadas.
-
-- Control de Presupuestos Financieros: Configuración de topes máximos de gasto por categoría y usuario sin duplicidad.
-
-- Generación de Reportes Periódicos: Consolidación de historiales financieros estructurados por fechas.
-
-- Validación Automatizada de Datos: Restricción por servidor (trigger) que impide el ingreso de montos menores o iguales a cero.
-
-- Consultas de Rendimiento y Análisis: Extracción cronológica y optimizada del historial financiero mediante uniones de tablas.
-
-## Estructura del proyecto
+## Project Structure
 
 ```
 Budgeting/
 │
 ├── README.md
-├── database/
-│   ├── schema.sql              # DDL (tablas, alteraciones, índices)
-│   ├── triggers.sql            # Código del trigger
-│   └── queries.sql             # Consulta de transacciones
-│
-└── src/
-    ├── Main.java               
-    ├── DatabaseConnection.java # Clase para conectar Java con PostgreSQL (JDBC)
-    ├── User.java               # Modelo de usuario 
-    ├── Transaction.java        # Modelo de transacción 
-    └── Budget.java             # Modelo de presupuesto 
+└── database/
+    ├── schema.sql              # DDL (tables, alterations, indexes)
+    ├── triggers.sql            # Trigger code
+    └── queries.sql             # Transaction query
+
 ```
 
-## Guía de instalación
+## Installation Guide
 
-1. Clonar el repositorio:
+1. Clone the repository:
 ```bash
-git clone https://github.com/siramirezar-afk/BUDGETING-DB.git
+git clone [https://github.com/siramirezar-afk/BUDGETING-DB.git](https://github.com/siramirezar-afk/BUDGETING-DB.git)
 ```
 
-2. Configurar la base de datos:
-  -Abre tu cliente de PostgreSQL (pgAdmin, DBeaver o la terminal).
-  -Crea una nueva base de datos llamada budgeting.
-  -Ejecuta los scripts en el siguiente orden:
-      database/schema.sql (Crea las tablas e índices)
-      database/triggers.sql (Crea el trigger de validación)
+2. Set up the database:
+  -Create a new database named budgeting.
+  -Open a Query Tool on the budgeting database and execute the scripts in the following order:
+      database/schema.sql (Creates tables and indexes)
+      database/triggers.sql (Creates the business rule validation trigger)
+
+3. Database Verification (Optional):
+You can run the queries inside database/queries.sql to check performance queries and test data.
    
-3. Configurar la conexión de la base de datos:
-  -Abre src/DatabaseConnection.java y actualiza la URL de la base de datos, el usuario y la contraseña con tus credenciales de PostgreSQL.
-
-4. Compilar el proyecto:
-```bash
-javac -d bin src/*.java
-```
-
-5. Ejecutar el sistema (elige una):
-```bash
-java -cp bin Main
-```
