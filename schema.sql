@@ -47,8 +47,8 @@ CREATE TABLE budgets (
 ALTER TABLE users
 ADD COLUMN cellphone_number VARCHAR(20);
 
--- 2. Rename table to "transaction"
-ALTER TABLE transac RENAME TO "transaction";
+-- 2. Rename table to "transactions"
+ALTER TABLE transac RENAME TO transactions;
 
 
 -- INDEXES
