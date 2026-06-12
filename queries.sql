@@ -39,4 +39,4 @@ WHERE userID = 1;
 -- DATA VISUALIZATION (Optional)
 SELECT * FROM users;
 SELECT * FROM categories;
-SELECT * FROM "transaction";
+SELECT * FROM transactions;
