@@ -1,6 +1,7 @@
+-- TABLES
 CREATE TABLE categories (
     categoryID    INT             PRIMARY KEY,
-    cateName      VARCHAR(100)    UNIQUE NOT NULL,
+    cateName      VARCHAR(100)    NOT NULL, 
     cateType      VARCHAR(50)     NOT NULL,
     description   VARCHAR(255)    NOT NULL,
     tagColour     VARCHAR(7)      NOT NULL
@@ -9,7 +10,7 @@ CREATE TABLE categories (
 CREATE TABLE users (
     userID        INT             PRIMARY KEY,
     userName      VARCHAR(100)    NOT NULL,
-    email         VARCHAR(100)    UNIQUE NOT NULL,
+    email         VARCHAR(100)    NOT NULL,
     password      VARCHAR(255)    NOT NULL
 );
 
@@ -41,26 +42,28 @@ CREATE TABLE budgets (
 );
 
 
--- DDL - ALTERATIONS 
-
--- 1. Add cellphone column
+-- ALTERATIONS 
+-- 1. Add cellphone column 
 ALTER TABLE users
 ADD COLUMN cellphone_number VARCHAR(20);
 
--- 2. Rename table (PostgreSQL syntax)
+-- 2. Rename table to "transaction"
 ALTER TABLE transac RENAME TO "transaction";
 
 
 -- INDEXES
-
+-- Ensures category names are unique
 CREATE UNIQUE INDEX uidx_categories_cateName
 ON categories(cateName);
 
+-- Ensures emails are unique
 CREATE UNIQUE INDEX uidx_users_email
 ON users(email);
 
+-- Prevents duplicate reports for the same user on the same date
 CREATE UNIQUE INDEX uidx_reports_userID_issuanceDate
 ON reports(userID, issuanceDate);
 
+-- Business Rule: Prevents a user from having duplicate budgets for the same category
 CREATE UNIQUE INDEX uidx_budgets_userID_categoryID
 ON budgets(userID, categoryID);
