@@ -11,7 +11,7 @@ INSERT INTO categories (categoryID, cateName, cateType, description, tagColour)
 VALUES (2, 'Transport', 'Expense', 'Bus, Uber, and gasoline expenses', '#3357FF');
 
 -- 1. Register new transaction (Linked to userID 1 and categoryID 2)
-INSERT INTO "transaction" (
+INSERT INTO transactions (
     transactionID,
     amount,
     trans_date,
