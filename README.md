@@ -49,13 +49,11 @@ git clone https://github.com/siramirezar-afk/BUDGETING-DB.git
   -Create a new database named budgeting.
   -Open a Query Tool on the budgeting database and execute the scripts in the following order:
    
-    Creates tables and indexes
-  
-      database/schema.sql
+    Creates tables and indexes:
+       database/schema.sql
    
-    Creates the business rule validation trigger
- 
-      database/triggers.sql 
+    Creates the business rule validation trigger:
+       database/triggers.sql 
   
    
 3. Database Verification (Optional):
