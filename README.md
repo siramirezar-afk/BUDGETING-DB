@@ -58,4 +58,17 @@ git clone https://github.com/siramirezar-afk/BUDGETING-DB.git
    
 3. Database Verification (Optional):
 You can run the queries inside database/queries.sql to check performance queries and test data.
-   
+
+
+
+# Execution Evidence
+
+## Test 1: Business Rule Validation (Trigger Error)
+* **Description:** Attempt to insert a transaction with a negative amount (`-50.00`) to verify that the validation trigger successfully blocks the invalid operation and returns a custom error message.
+* **Screenshot:**
+  ![Trigger Validation Error](images/trigger_error_screenshot.png)
+
+## Test 2: Successful Database Setup and Data Insertion
+* **Description:** Successful execution of the full DDL schema in pgAdmin, table creation verification inside the public schema tree, and successful insertion of valid records (users and categories).
+* **Screenshot:**
+  ![Successful Database Execution](images/trigger_error_screenshot.png)
