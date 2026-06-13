@@ -73,4 +73,6 @@ You can run the queries inside database/queries.sql to check performance queries
 * **Screenshots:**
   ![Successful Database Execution](images/table_creation_ss1.png)
   ![Successful Database Execution](images/table_creation_ss2.png)
-  
+  ![Successful Database Execution](images/table_creation_ss3.png)
+  ![Successful Database Execution](images/table_creation_ss4.png)
+  ![Successful Database Execution](images/table_creation_ss5.png)
