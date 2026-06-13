@@ -70,5 +70,7 @@ You can run the queries inside database/queries.sql to check performance queries
 
 ## Test 2: Successful Database Setup and Data Insertion
 * **Description:** Successful execution of the full DDL schema in pgAdmin, table creation verification inside the public schema tree, and successful insertion of valid records (users and categories).
-* **Screenshot:**
-  ![Successful Database Execution](images/trigger_error_screenshot.png)
+* **Screenshots:**
+  ![Successful Database Execution](images/table_creation_ss1.png)
+  ![Successful Database Execution](images/table_creation_ss2.png)
+  
