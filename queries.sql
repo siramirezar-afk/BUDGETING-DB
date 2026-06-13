@@ -65,9 +65,3 @@ INSERT INTO reports (reportID, issuanceDate, period, report_data, userID) VALUES
 UPDATE users 
 SET cellphone_number = '+57 3214567890' 
 WHERE userID = 1;
-
-
--- DATA VISUALIZATION (Optional)
-SELECT * FROM users;
-SELECT * FROM categories;
-SELECT * FROM transactions;
